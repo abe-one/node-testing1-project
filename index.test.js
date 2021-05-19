@@ -1,6 +1,6 @@
 const utils = require("./index");
 
-describe("[Exercise 1] trimProperties", () => {
+describe.skip("[Exercise 1] trimProperties", () => {
   test("[1] returns an object with the properties trimmed", () => {
     const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
     const expected = { foo: "foo", bar: "bar", baz: "baz" };
@@ -15,7 +15,7 @@ describe("[Exercise 1] trimProperties", () => {
   });
 });
 
-describe("[Exercise 2] trimPropertiesMutation", () => {
+describe.skip("[Exercise 2] trimPropertiesMutation", () => {
   test("[3] returns an object with the properties trimmed", () => {
     const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
     const expected = { foo: "foo", bar: "bar", baz: "baz" };
@@ -30,9 +30,17 @@ describe("[Exercise 2] trimPropertiesMutation", () => {
 });
 
 describe("[Exercise 3] findLargestInteger", () => {
-  test.todo(
-    "[5] returns the largest number in an array of objects { integer: 2 }"
-  );
+  test("[5] returns the largest number in an array of objects { integer: 2 }", () => {
+    const expected = 9;
+    const integers = [
+      { integer: 1 },
+      { integer: 9 },
+      { integer: 2 },
+      { integer: 3 },
+    ];
+    const actual = utils.findLargestInteger(integers);
+    expect(actual).toEqual(expected);
+  });
 });
 
 describe("[Exercise 4] Counter", () => {
