@@ -25,6 +25,9 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  const keys = Object.keys(obj);
+  keys.forEach((key) => (obj[key] = obj[key].trim()));
+  return obj;
 }
 
 /**
