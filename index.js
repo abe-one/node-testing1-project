@@ -75,6 +75,8 @@ class Seasons {
    * [Exercise 5A] Seasons creates a seasons object
    */
   constructor() {
+    this.seasons = ["spring", "summer", "fall", "winter"];
+    this.now = 0;
     // ✨ initialize whatever properties are needed
   }
 
@@ -91,7 +93,8 @@ class Seasons {
    * seasons.next() // returns "summer"
    */
   next() {
-    // ✨ implement
+    this.now === 3 ? (this.now = 0) : this.now++;
+    return this.seasons[this.now];
   }
 }
 
@@ -103,8 +106,11 @@ class Car {
    * @param {number} mpg - miles the car can drive per gallon of gas
    */
   constructor(name, tankSize, mpg) {
-    this.odometer = 0; // car initilizes with zero miles
-    this.tank = tankSize; // car initiazes full of gas
+    this.odometer = 0; // car initializes with zero miles
+    this.tankSize = tankSize;
+    this.tank = tankSize;
+    this.mpg = mpg;
+    this.range = mpg * this.tank;
     // ✨ initialize whatever other properties are needed
   }
 
@@ -122,7 +128,11 @@ class Car {
    * focus.drive(200) // returns 600 (ran out of gas after 100 miles)
    */
   drive(distance) {
-    // ✨ implement
+    const actualDistance = distance > this.range ? this.range : distance;
+    this.odometer = this.odometer + actualDistance;
+    this.tank = this.tank - actualDistance / this.mpg;
+    this.range = this.mpg * this.tank;
+    return this.odometer;
   }
 
   /**
@@ -137,7 +147,9 @@ class Car {
    * focus.refuel(99) // returns 600 (tank only holds 20)
    */
   refuel(gallons) {
-    // ✨ implement
+    this.tank = this.tankSize < this.tank ? this.tankSize : gallons;
+    this.range = this.mpg * this.tank;
+    return this.range;
   }
 }
 
@@ -161,7 +173,13 @@ class Car {
  * })
  */
 function isEvenNumberAsync(number) {
-  // ✨ implement
+  const isEven = (num) => !(num % 2);
+  const promise = new Promise((resolve, reject) => {
+    (typeof number === "number") & !isNaN(number)
+      ? resolve(isEven(number))
+      : reject("number must be a number");
+  });
+  return promise;
 }
 
 module.exports = {
