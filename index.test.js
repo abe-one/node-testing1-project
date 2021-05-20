@@ -1,6 +1,6 @@
 const utils = require("./index");
 
-describe.skip("[Exercise 1] trimProperties", () => {
+describe("[Exercise 1] trimProperties", () => {
   test("[1] returns an object with the properties trimmed", () => {
     const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
     const expected = { foo: "foo", bar: "bar", baz: "baz" };
@@ -16,7 +16,7 @@ describe.skip("[Exercise 1] trimProperties", () => {
   });
 });
 
-describe.skip("[Exercise 2] trimPropertiesMutation", () => {
+describe("[Exercise 2] trimPropertiesMutation", () => {
   test("[3] returns an object with the properties trimmed", () => {
     const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
     const expected = { foo: "foo", bar: "bar", baz: "baz" };
@@ -31,7 +31,7 @@ describe.skip("[Exercise 2] trimPropertiesMutation", () => {
   });
 });
 
-describe.skip("[Exercise 3] findLargestInteger", () => {
+describe("[Exercise 3] findLargestInteger", () => {
   test("[5] returns the largest number in an array of objects { integer: 2 }", () => {
     const expected = 9;
     const integers = [
@@ -45,7 +45,7 @@ describe.skip("[Exercise 3] findLargestInteger", () => {
   });
 });
 
-describe.skip("[Exercise 4] Counter", () => {
+describe("[Exercise 4] Counter", () => {
   let counter;
   let initialCount = 4;
 
@@ -70,7 +70,7 @@ describe.skip("[Exercise 4] Counter", () => {
   });
 });
 
-describe.skip("[Exercise 5] Seasons", () => {
+describe("[Exercise 5] Seasons", () => {
   let seasons;
 
   beforeEach(() => {
@@ -116,7 +116,7 @@ describe.skip("[Exercise 5] Seasons", () => {
   });
 });
 
-describe.skip("[Exercise 6] Car", () => {
+describe("[Exercise 6] Car", () => {
   let focus;
   beforeEach(() => {
     focus = new utils.Car("focus", 20, 30); // each test must start with a fresh car
